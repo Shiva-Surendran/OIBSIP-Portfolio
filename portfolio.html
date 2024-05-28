@@ -1,0 +1,443 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Mono'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Sofia', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #11232f;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-family: 'Sofia', sans-serif;
+            font-size: 35px;
+            text-align: left;
+            margin-left: 25px;
+        }
+
+        .header-links {
+            margin-right: 25px;
+        }
+
+        .header-links a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Merriweather', sans-serif;
+            font-size: 18px;
+            margin: 0 20px;
+        }
+
+        .header-links a:hover {
+            font-size: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section {
+            padding-top: 120px;
+        }
+
+        .home {
+            background-image: url("bg6.png");
+            background-size: cover;
+            height: 620px;
+            text-align: center;
+            position: relative;
+        }
+
+        .home h2 {
+            font-family: 'Sofia';
+            font-size: 36px;
+            color: #000000;
+            padding-top: 120px;
+        }
+
+        .home h1 {
+            padding-top: 139px;
+            font-size: 48px;
+            color: #000000;
+        }
+
+        .dp {
+            position: absolute;
+            right: -35px;
+            bottom: -148px;
+            width: 500px;
+            height: auto;
+            overflow: hidden;
+        }
+
+        footer {
+            background-color: #11232f;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .ml2 {
+            font-weight: 900;
+            font-size: 3.5em;
+        }
+
+        .ml2 .letter {
+            display: inline-block;
+            line-height: 1em;
+        }
+
+        .project {
+            background-image: url("bg9.jpg");
+            padding-bottom: 50px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 50px;
+            text-align: left;
+            padding-left: 25px;
+            height: 100%;
+            font-family: 'Roboto Mono';
+            font-size: 22px;
+        }
+
+        .project p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .work-item {
+            margin-bottom: 50px;
+        }
+
+        .work-item h3 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .work-item p {
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+
+
+        .about {
+            background-image: url('a.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Sofia', sans-serif;
+
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .tech-item {
+            flex: 0 0 calc(33.33% - 20px);
+            max-width: calc(33.33% - 20px);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            padding: 16px;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-item img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .tech-item h6 {
+            position: absolute;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            color: #000000;
+            font-size: 20px;
+        }
+
+        .project .ptitle {
+            color: #ffffff;
+            font-size: 42px;
+            text-align: center;
+        }
+
+        .about p {
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            padding: 10px;
+            font-weight: bold;
+            font-family: "Roboto Mono";
+
+            margin-bottom: 10px;
+            text-align: left;
+        }
+.about h6{            font-family: "Roboto Mono";
+}
+        .about h1 {
+            color: rgb(0, 0, 0);
+            font-size: 36px;
+            text-align: center;
+            font-family: 'Roboto Mono';
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-links {
+                margin: 20px 0;
+            }
+
+            .home h1,
+            .home h2 {
+                font-size: 30px;
+            }
+
+            .project {
+                padding-top: 30px;
+                padding-left: 10px;
+                padding-bottom: 20px;
+                font-size: 20px;
+            }
+
+            .about p {
+                font-size: 12px;
+                margin-bottom: 20px;
+                color: rgb(0, 0, 0);
+            }
+
+            .project p {
+                font-size: 25px;
+                margin-bottom: 20px;
+                color: white;
+            }
+
+            .work-item h3 {
+                font-size: 30px;
+                margin-bottom: 5px;
+                color: white;
+            }
+
+            .work-item p {
+                font-size: 25px;
+                color: white;
+            }
+
+            .dp {
+                right: -15px;
+                bottom: -1px;
+                width: 250px;
+                height: auto;
+                overflow: hidden;
+            }
+
+            .tech-item {
+                flex: 0 0 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+        .con{color: black;
+        font-family: roboto mono;
+        padding-left: 25px;
+        font-size: 25px;
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Shiva Surendran</h1>
+        <div class="header-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#project">Project</a>
+        </div>
+    </header>
+
+    <section id="home" class="home">
+        <h1 id="welcome-text" class="ml2">Welcome to my Portfolio!</h1>
+        <h2 id="welcome-text2" style="display: none;">
+            Hi, I am Shiva<br>
+            Front-end developer and Architectural Designer.<br>
+            Currently Studying in Cochin University of Science and Technology, Kochi
+        </h2>
+        <a href="#about"><i class="fa fa-angle-down" id="scroll-down" style="font-size: 48px; color: #fff;"></i></a>
+        <img src="dp.png" alt="dp" class="dp">
+    </section>
+
+    <section id="about" class="about">
+        <p>Welcome to my corner of the web.</p>
+        <p>I'm a passionate designer dedicated to creating stunning webpages and architectural models. This space is a
+            showcase of my work, where you can explore my latest projects, learn more about my skills and experience,
+            and get in touch for potential collaborations.</p>
+
+        <h1>Tech Stack</h1>
+        <div class="tech-stack">
+            <div class="tech-item">
+                <img src="c.png" alt="Tech Stack Image">
+                <h6>C</h6>
+            </div>
+            <div class="tech-item">
+                <img src="c++.png" alt="Tech Stack Image">
+                <h6>C++</h6>
+            </div>
+            <div class="tech-item">
+                <img src="java.png" alt="Tech Stack Image">
+                <h6>Java</h6>
+            </div>
+            <div class="tech-item">
+                <img src="python.png" alt="Tech Stack Image">
+                <h6>Python</h6>
+            </div>
+            <div class="tech-item">
+                <img src="html.png" alt="Tech Stack Image">
+                <h6>HTML</h6>
+            </div>
+            <div class="tech-item">
+                <img src="css-3.png" alt="Tech Stack Image">
+                <h6>CSS</h6>
+            </div>
+            <div class="tech-item">
+                <img src="js.png" alt="Tech Stack Image">
+                <h6>Javascript</h6>
+            </div>
+            <div class="tech-item">
+                <img src="svelte-1.svg" alt="Tech Stack Image">
+                <h6>Svelte</h6>
+            </div>
+            <div class="tech-item">
+                <img src="mysql.png" alt="Tech Stack Image">
+                <h6>MySQL</h6>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="project">
+        <p class="ptitle">My Projects</p>
+
+        <div class="work-item">
+            <h3>4f Builders Website</h3>
+            <p>The 4f Builders & Engineering Pvt. Ltd website is designed to provide comprehensive information about the
+                company. The site features detailed sections on the range of services, showcasing a portfolio of past
+                projects with images and descriptions, and introduces the team members. The website was designed
+                primarily using Svelte.</p>
+        </div>
+        <div class="work-item">
+            <h3>Chandrashekhar Architects Landing Page</h3>
+            <p>Created the Landing Page for Chandrashekhar Architects PVT ltd. The landing page is designed to capture
+                leads and provide a snapshot of the company’s expertise and provide basic idea about the company. The
+                page was designed using HTML, CSS, and Javascript.</p>
+        </div>
+        <div class="work-item">
+            <h3>Care Connect App</h3>
+            <p>An android app developed using Flutter to monitor isolated individuals (Development Stage).</p>
+        </div>
+    </section>
+    <h1 class="con">Contact me at shivaasurendran@gmail.com</h1>
+
+    <footer>
+        <p>&copy; 2024 Copyleft</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var welcomeText = document.getElementById('welcome-text');
+            var opacity = 0;
+            var intervalID = setInterval(function () {
+                if (opacity < 9) {
+                    opacity += 0.4;
+                    welcomeText.style.opacity = opacity;
+                } else {
+                    clearInterval(intervalID);
+                    var welcomeText2 = document.getElementById('welcome-text2');
+                    welcomeText.style.display = 'none';
+                    welcomeText2.style.display = 'block';
+                }
+            }, 125);
+        });
+
+        var textWrapper = document.querySelector('.ml2');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        anime.timeline({ loop: true })
+            .add({
+                targets: '.ml2 .letter',
+                scale: [2, 1],
+                opacity: 10,
+                translateZ: 0,
+                easing: "easeOutExpo",
+                duration: 1050,
+                delay: (el, i) => 100 * i
+            });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var headerHeight = document.querySelector('header').offsetHeight;
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    var target = document.querySelector(this.getAttribute('href'));
+                    var offsetTop = target.offsetTop;
+
+                    window.scrollTo({
+                        top: offsetTop - headerHeight,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            var scrollDown = document.getElementById('scroll-down');
+            scrollDown.addEventListener('click', function () {
+                var aboutSection = document.getElementById('about');
+                var offsetTop = aboutSection.offsetTop;
+                window.scrollTo({
+                    top: offsetTop - headerHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
